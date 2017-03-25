@@ -103,7 +103,7 @@
                         <input type="button" class="btn btn-warning" value="編輯">
                     </td>
                      <td>
-                        <input type="button" class="btn btn-success" value="專注性注意力測驗">
+                        <input type="button" class="btn btn-success" value="專注性注意力測驗" onclick="openTest1();">
                         <input type="button" class="btn btn-success" value="轉換性注意力測驗">
                         <input type="button" class="btn btn-success" value="分配性注意力測驗">
                     </td>
@@ -122,7 +122,7 @@
                         <input type="button" class="btn btn-warning" value="編輯">
                     </td>
                      <td>
-                        <input type="button" class="btn btn-success" value="專注性注意力測驗">
+                        <input type="button" class="btn btn-success" value="專注性注意力測驗" onclick="openTest1();">
                         <input type="button" class="btn btn-success" value="轉換性注意力測驗">
                         <input type="button" class="btn btn-success" value="分配性注意力測驗">
                     </td>
@@ -141,7 +141,7 @@
                         <input type="button" class="btn btn-warning" value="編輯">
                     </td>
                      <td>
-                        <input type="button" class="btn btn-success" value="專注性注意力測驗">
+                        <input type="button" class="btn btn-success" value="專注性注意力測驗" onclick="openTest1();">
                         <input type="button" class="btn btn-success" value="轉換性注意力測驗">
                         <input type="button" class="btn btn-success" value="分配性注意力測驗">
                     </td>
@@ -159,13 +159,24 @@
     </div>
     <!-- /.container -->
 
-
-
 </body>
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
     });
 
+function openTest1() {
+// 	var openUrl = "T1_01.html";
+// 	var openUrl = "assessment1/00_prepareFullScreen.html";
+	var openUrl = "assessment1/01_index.html";
+
+	var screenHeight = screen.height;
+	var screenWidth = screen.width;
+	
+	window.open(openUrl, '', 'status=no, menubar=no, scrollbars=no, resizable=yes, top=0, left=0, width=' + screenWidth + ', height=' + screenHeight + ', fullscreen=yes ,location=no');
+
+// 	window.open(openUrl);
+
+}
 </script>
 </html>

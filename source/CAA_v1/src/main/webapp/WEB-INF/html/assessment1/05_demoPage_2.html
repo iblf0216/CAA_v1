@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>測驗首頁</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../../css/heroic-features.css" rel="stylesheet">
+    
+    <link href="../../css/jquery.dataTables.min.css" rel="stylesheet">
+    
+    <!-- jQuery -->
+    <script src="../../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="../../js/jquery.dataTables.min.js"></script>
+</head>
+<style type="text/css">
+body {
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+#container {
+	margin-left: 5%;
+	margin-right: 5%;
+	height: 100vh;
+	position: relative;
+}
+
+/*for 沒有說明內容*/
+#titleDiv {
+/* 	background-color: #FFD4D4; */
+	height: 55%;
+	text-align: center;
+}
+
+/*for 有說明內容*/
+#titleDiv2 {
+/*	background-color: #FFD4D4; */
+	height: 15%;
+	text-align: center;
+}
+
+#contentDiv {
+/*	background-color: #80ff80; */
+	height: 40%;
+	/*text-align: center;*/
+}
+
+#btnDiv {
+	height: 35%;
+/* 	background-color: #6699ff; */
+	text-align: center;
+}
+
+#promptDiv {
+/*	background-color: #FFD4D4; */
+	height: 20%;
+	text-align: center;
+	font-size:30px;
+	border-style: solid;
+	border-color: #3366cc;
+	border-width: 2px;
+}
+
+#picDiv {
+	height: 70%;
+/*	background-color: #6699ff; */
+	text-align: center;
+}
+
+.wrapper {
+  height: 100%;
+/*   background-color: #9096A6; */
+  text-align: center;
+
+  /* Point */
+  font-size: 0;
+}
+.wrapper:before {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+p.text{
+  display: inline-block;
+  vertical-align: middle;
+  font-family: DFKai-sb;
+  font-weight:bolder;
+
+  /* Point 要使用絕對值的 font-size 覆寫掉父層的 font-size: 0 */
+  font-size: 80px;
+}
+
+/* 自製button內的打勾、打叉 方框樣式 */
+.red_border {
+	border-style: solid;
+	border-color: red;
+	border-width: 3px;
+	width: 30%;
+	margin: 0px auto; /*置中*/
+	color: red;
+	background: white;
+}
+
+/* 自製button樣式 */
+.blue_bg_btn {
+	background-color: #4d88ff;
+	width: 240px;
+	height: 120px;
+	border-width: 5px;
+	border-color: #24478f;
+	border-style: solid;
+	font-size: 36px;
+	font-family: DFKai-sb;
+	font-weight: bolder;
+	margin:0px auto; /*置中*/
+}
+
+</style>
+<body>
+	<div id="container">
+		<div id="promptDiv">
+			<p>圖形播放前會出現黑色十字</p>
+			<p>提醒您注意看螢幕</p>
+		</div>
+		<div id="picDiv">
+			<img src="demo_pic/05.JPG" style="height:95%; weight:95%;">
+		</div>
+	</div>
+</body>
+<script>
+$(document).ready(function(){
+    
+    $('body').keydown(function(event){
+    	    
+   	    if( event.which == 56 ) { // 數字8 換下一頁
+   	    	console.log("按下8了");
+   	    	document.location.href="06_demoPage_3.html";
+   	    }
+   	    
+   	    if( event.which == 27 ) { // ESC
+   	        console.log("跳出測驗");
+   	    	window.close();
+   	    }
+    });
+});
+</script>
+</html>

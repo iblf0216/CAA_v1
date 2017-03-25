@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>測驗首頁</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../../css/heroic-features.css" rel="stylesheet">
+    
+    <link href="../../css/jquery.dataTables.min.css" rel="stylesheet">
+    
+    <!-- jQuery -->
+    <script src="../../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="../../js/jquery.dataTables.min.js"></script>
+</head>
+<style type="text/css">
+body {
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+#container {
+	margin-left: 5%;
+	margin-right: 5%;
+	height: 100vh;
+	position: relative;
+}
+
+#titleDiv {
+/* 	background-color: #FFD4D4; */
+	height: 55%;
+	text-align: center;
+}
+
+#btnDiv {
+	height: 35%;
+/* 	background-color: #6699ff; */
+	text-align: center;
+}
+
+#materialDiv {
+/*	background-color: #FFD4D4; */
+	height: 90%;
+	text-align: center;
+}
+
+.wrapper {
+  height: 100%;
+/*   background-color: #9096A6; */
+  text-align: center;
+
+  /* Point */
+  font-size: 0;
+}
+.wrapper:before {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+p.text{
+  display: inline-block;
+  vertical-align: middle;
+  font-family: DFKai-sb;
+  font-weight:bolder;
+
+  /* Point 要使用絕對值的 font-size 覆寫掉父層的 font-size: 0 */
+  font-size: 80px;
+}
+
+/* 自製button內的打勾、打叉 方框樣式 */
+.red_border {
+	border-style: solid;
+	border-color: red;
+	border-width: 3px;
+	width: 30%;
+	margin: 0px auto; /*置中*/
+	color: red;
+	background: white;
+}
+
+/* 自製button樣式 */
+.blue_bg_btn {
+	background-color: #4d88ff;
+	width: 240px;
+	height: 120px;
+	border-width: 5px;
+	border-color: #24478f;
+	border-style: solid;
+	font-size: 36px;
+	font-family: DFKai-sb;
+	font-weight: bolder;
+	margin:0px auto; /*置中*/
+}
+
+</style>
+<body>
+	<div id="container">
+		<div id="materialDiv">
+			<div class="wrapper"><p class="text" style="font-size: 40px;">+</p></div>
+		</div>
+	</div>
+</body>
+<script>
+$(document).ready(function(){
+    
+    // 1秒後 自動跳下一頁
+    setTimeout('document.location.href="33_redTriangle.html"', 1000);
+});
+</script>
+</html>
