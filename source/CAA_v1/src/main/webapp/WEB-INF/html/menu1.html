@@ -26,6 +26,10 @@
     <script src="../js/bootstrap.min.js"></script>
     
     <script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
+    
+    <!-- Bootbox -->
+    <script src="../js/bootbox.min.js"></script>
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -108,10 +112,10 @@
                     <td>台大1</td>
                     <td>研究生</td>
                     <td>
-                        <input type="button" class="btn btn-warning" value="編輯">
+                        <input type="button" class="btn btn-warning" value="編輯" onclick="modifyExaminer();">
                     </td>
                     <td>
-                        <input type="button" class="btn btn-danger" value="刪除">
+                        <input type="button" class="btn btn-danger" value="刪除" onclick="deleteExaminer(this);">
                     </td>
                 </tr>
                 <tr>
@@ -119,10 +123,10 @@
                     <td>台大2</td>
                     <td>研究生</td>
                     <td>
-                        <input type="button" class="btn btn-warning" value="編輯">
+                        <input type="button" class="btn btn-warning" value="編輯" onclick="modifyExaminer();">
                     </td>
                     <td>
-                        <input type="button" class="btn btn-danger" value="刪除">
+                        <input type="button" class="btn btn-danger" value="刪除" onclick="deleteExaminer(this);">
                     </td>
                 </tr>
                 <tr>
@@ -130,10 +134,10 @@
                     <td>台大3</td>
                     <td>研究生</td>
                     <td>
-                        <input type="button" class="btn btn-warning" value="編輯">
+                        <input type="button" class="btn btn-warning" value="編輯" onclick="modifyExaminer();">
                     </td>
                     <td>
-                        <input type="button" class="btn btn-danger" value="刪除">
+                        <input type="button" class="btn btn-danger" value="刪除" onclick="deleteExaminer(this);">
                     </td>
                 </tr>
                 <tr>
@@ -141,10 +145,10 @@
                     <td>台大4</td>
                     <td>研究生</td>
                     <td>
-                        <input type="button" class="btn btn-warning" value="編輯">
+                        <input type="button" class="btn btn-warning" value="編輯" onclick="modifyExaminer();">
                     </td>
                     <td>
-                        <input type="button" class="btn btn-danger" value="刪除">
+                        <input type="button" class="btn btn-danger" value="刪除" onclick="deleteExaminer(this);">
                     </td>
                 </tr>
 
@@ -156,9 +160,39 @@
 
 </body>
 <script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-    });
+$(document).ready(function() {
+    $('#example').DataTable();
 
+});
+
+function modifyExaminer() {
+	document.location.href="menu1_addExaminer.html";
+}
+
+function deleteExaminer(row) {
+  	var i=row.parentNode.parentNode.rowIndex;
+
+	bootbox.confirm({
+		message : "是否確定刪除?",
+		backdrop: true,
+		buttons : {
+			confirm : {
+				label : 'Yes',
+				className : 'btn-success'
+			},
+			cancel : {
+				label : 'No',
+				className : 'btn-danger'
+			}
+		},
+		callback : function(result) {
+			if (result) {
+				document.getElementById('example').deleteRow(i);
+			}
+		}
+	});
+}
 </script>
+
+
 </html>
